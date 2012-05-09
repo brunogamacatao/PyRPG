@@ -64,12 +64,15 @@ class TMXHandler(sax.ContentHandler):
         elif name == 'tile':
             gid = int(attrs.get('gid', None)) - 1
             if gid < 0 : gid = 0
-            tile = self.tileset.get_tile(gid)
-            pos = (self.column * self.tile_width, self.line * self.tile_height)
-            self.image.blit(tile, pos)
 
             if gid > 0:
-                self.layers[self.currentLayer].append(Rect(self.column * self.tile_width, self.line * self.tile_height, self.tile_width, self.tile_height))
+                tile = self.tileset.get_tile(gid)
+                pos = (self.column * self.tile_width, self.line * self.tile_height)
+                self.image.blit(tile, pos)
+                self.layers[self.currentLayer].append(Rect(pos[0], pos[1], self.tile_width, self.tile_height))
+                
+                if self.currentLayer in ('city', 'plants'):
+                    pygame.draw.rect(self.image, (0, 0, 255), Rect(pos[0], pos[1], self.tile_width, self.tile_height), 1)
 
             self.column += 1
             if(self.column >= self.columns):
@@ -103,3 +106,10 @@ class Mapa(object):
                 if obstaculo.colliderect(jogador_rect):
                     return True
         return False
+    
+    def get_collision_rects(self, jogador_rect, camadas_obstaculos):
+        for camada in camadas_obstaculos:
+            for obstaculo in self.get_camada(camada):
+                if obstaculo.colliderect(jogador_rect):
+                    return (jogador_rect, obstaculo)
+        return None

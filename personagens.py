@@ -1,4 +1,5 @@
 import pygame
+from pygame.locals import *
 import pygame.sprite
 from myutils import Spritesheet, Animacao
 
@@ -45,3 +46,7 @@ class Jogador(pygame.sprite.Sprite):
         self.rect   = animacao.rect
         self.rect.x = self.posicao[0]
         self.rect.y = self.posicao[1]
+        
+        
+    def get_collision_rect(self):
+        return Rect(self.rect.x, self.rect.y + self.rect.height / 2, self.rect.width, self.rect.height / 2)

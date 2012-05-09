@@ -26,6 +26,9 @@ def main():
         for event in pygame.event.get():
             if event.type == QUIT:
                 rodando = False
+            elif event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    rodando = False
 
         #Obtem a lista de teclas pressionadas
         teclas  = pygame.key.get_pressed()
@@ -34,7 +37,7 @@ def main():
 
         if teclas[K_LEFT]:
             #mapa_x += 1
-            if jogador.posicao[0] > jogador.rect.width / 2:
+            if jogador.posicao[0] > 0:
                 jogador.posicao[0] -= 1
             jogador.direcao  = Jogador.ESQUERDA
             jogador.animacao = Jogador.ANDANDO
@@ -47,7 +50,7 @@ def main():
             andando = True
         if teclas[K_UP]:
             #mapa_y += 1
-            if jogador.posicao[1] > jogador.rect.height:
+            if jogador.posicao[1] > 0:
                 jogador.posicao[1] -= 1
             jogador.direcao  = Jogador.CIMA
             jogador.animacao = Jogador.ANDANDO
@@ -58,8 +61,6 @@ def main():
             jogador.direcao  = Jogador.BAIXO
             jogador.animacao = Jogador.ANDANDO
             andando = True
-        if teclas[K_ESCAPE]:
-            rodando = False
 
         if not andando:
             jogador.animacao = Jogador.PARADO
@@ -67,13 +68,14 @@ def main():
         #Atualizando as variaveis do jogador
         jogador.update()
         #Atualizando a posicao do jogador de acordo com o deslocamento do mapa
-        jogador_rect = jogador.rect.move(mapa_x, mapa_y)
+        jogador_img_rect = jogador.rect.move(mapa_x, mapa_y)
+        jogador_col_rect = jogador.get_collision_rect().move(mapa_x, mapa_y)
 
         #Verificando as colisoes com os obstaculos
-        if mapa.colide(jogador_rect, OBSTACULOS):
+        if mapa.colide(jogador.get_collision_rect(), OBSTACULOS):
             jogador.posicao = [old_pos[0], old_pos[1]]
 
-        #Logica de deslocamento do mapa na tela
+        # Logica de deslocamento do mapa na tela
         if jogador.posicao[0] + mapa_x > TAMANHO_TELA[0] * 0.75:
             mapa_x -= 1
         if jogador.posicao[0] + mapa_x < TAMANHO_TELA[0] * 0.25 and mapa_x < 0:
@@ -85,7 +87,14 @@ def main():
 
         #Desenho do jogo na tela
         screen.blit(mapa.get_image(), (mapa_x, mapa_y))
-        screen.blit(jogador.image, jogador_rect)
+        screen.blit(jogador.image, jogador_img_rect)
+        pygame.draw.rect(screen, (0, 255, 0), jogador_col_rect, 1)
+        
+        if mapa.get_collision_rects(jogador.get_collision_rect(), OBSTACULOS):
+            rects = mapa.get_collision_rects(jogador.get_collision_rect(), OBSTACULOS)
+            pygame.draw.rect(screen, (255, 0, 0), rects[0].move(mapa_x, mapa_y), 1)
+            pygame.draw.rect(screen, (255, 0, 0), rects[1].move(mapa_x, mapa_y), 1)
+            
         pygame.display.flip()
 
 if __name__ == "__main__": main()
