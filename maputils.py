@@ -4,6 +4,15 @@ from pygame.locals import *
 from pygame import Rect
 from xml import sax
 
+class MapObject(object):
+    def __init__(self, name, type, x, y, width, height):
+        self.name = name
+        self.type = type
+        self.x    = x
+        self.y    = y
+        self.rect = Rect(x, y, width, height)
+        self.properties = {}
+
 class Tileset(object):
     def __init__(self, file, tile_width, tile_height):
         image = pygame.image.load(file).convert_alpha()
@@ -26,16 +35,19 @@ class Tileset(object):
 
 class TMXHandler(sax.ContentHandler):
     def __init__(self):
-        self.width       = 0
-        self.height      = 0
-        self.tile_width  = 0
-        self.tile_height = 0
-        self.columns     = 0
-        self.lines       = 0
-        self.properties  = {}
-        self.image       = None
-        self.tileset     = None
-        self.layers      = {}
+        self.width         = 0
+        self.height        = 0
+        self.tile_width    = 0
+        self.tile_height   = 0
+        self.columns       = 0
+        self.lines         = 0
+        self.properties    = {}
+        self.image         = None
+        self.tileset       = None
+        self.layers        = {}
+        self.objects       = []
+        self.readingMap    = False
+        self.readingObject = False
 
     def startElement(self, name, attrs):
         # get most general map informations and create a surface
@@ -47,13 +59,17 @@ class TMXHandler(sax.ContentHandler):
             self.width       = self.columns * self.tile_width
             self.height      = self.lines * self.tile_height
             self.image       = pygame.Surface([self.width, self.height]).convert()
+            self.readingMap  = True
         # create a tileset
-        elif name=="image":
+        elif name == "image":
             source = attrs.get('source', None)
             self.tileset = Tileset(source, self.tile_width, self.tile_height)
         # store additional properties.
         elif name == 'property':
-            self.properties[attrs.get('name', None)] = attrs.get('value', None)
+            if self.readingMap:
+                self.properties[attrs.get('name', None)] = attrs.get('value', None)
+            if self.readingObject:
+                self.currentObject.properties[attrs.get('name', None)] = attrs.get('value', None)
         # starting counting
         elif name == 'layer':
             self.line   = 0
@@ -78,6 +94,21 @@ class TMXHandler(sax.ContentHandler):
             if(self.column >= self.columns):
                 self.column = 0
                 self.line  += 1
+        elif name == 'objectgroup':
+            self.currentObjectGroup = attrs.get('name', None)
+            self.object_width       = int(attrs.get('width', None))
+            self.object_height      = int(attrs.get('height', None))
+        elif name == 'object':
+            self.readingMap    = False
+            self.readingObject = True
+            
+            name  = attrs.get('name', None)
+            _type = attrs.get('type', None)
+            x     = int(attrs.get('x', None))
+            y     = int(attrs.get('y', None))
+            
+            self.currentObject = MapObject(name, _type, x, y, self.object_width, self.object_height)
+            self.objects.append(self.currentObject)
 
     # just for debugging
     def endDocument(self):
@@ -112,4 +143,10 @@ class Mapa(object):
             for obstaculo in self.get_camada(camada):
                 if obstaculo.colliderect(jogador_rect):
                     return (jogador_rect, obstaculo)
+        return None
+    
+    def get_collision_objects(self, jogador_rect):
+        for objeto in self.tmxhandler.objects:
+            if objeto.rect.colliderect(jogador_rect):
+                return objeto
         return None

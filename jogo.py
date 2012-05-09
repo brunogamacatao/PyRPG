@@ -11,6 +11,7 @@ class Jogo(object):
     # Definição dos estados do jogo
     MENU   = 0
     FASE_1 = 1
+    FASE_2 = 2
     
     def __init__(self, tamanho_tela = TAMANHO_TELA, fps = FPS):
         pygame.init()
@@ -30,8 +31,11 @@ class Jogo(object):
             from menu import Menu
             self.telaAtual = Menu(self)
         elif tela == Jogo.FASE_1:
-            from fases import Fase
-            self.telaAtual = Fase(self)
+            from fase_1 import Fase1
+            self.telaAtual = Fase1(self)
+        elif tela == Jogo.FASE_2:
+            from fase_2 import Fase2
+            self.telaAtual = Fase2(self)
 
     def main(self):
         while self.rodando:

@@ -2132,7 +2132,7 @@
    <tile gid="234"/>
    <tile gid="234"/>
    <tile gid="234"/>
-   <tile gid="233"/>
+   <tile gid="293"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -6023,4 +6023,11 @@
    <tile gid="0"/>
   </data>
  </layer>
+ <objectgroup name="portas" width="50" height="30">
+  <object name="porta" type="Porta" x="625" y="398">
+   <properties>
+    <property name="para" value="FASE_2"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

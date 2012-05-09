@@ -5,7 +5,7 @@ from maputils import Mapa
 ARQUIVO_MAPA = 'mapa.tmx'
 OBSTACULOS   = ('city', 'plants')
 
-class Fase(object):
+class Fase1(object):
     def __init__(self, jogo):
         from personagens import Jogador
         
@@ -74,6 +74,10 @@ class Fase(object):
             self.mapa_y -= 1
         if self.jogador.posicao[1] + self.mapa_y < self.jogo.tamanho_tela[1] * 0.25 and self.mapa_y < 0:
             self.mapa_y += 1
+
+        objeto = self.mapa.get_collision_objects(self.jogador.get_collision_rect())
+        if objeto and objeto.properties.has_key('para'):
+            self.jogo.irParaTela(getattr(self.jogo, objeto.properties['para']))
 
     def renderiza(self):
         #Desenho do jogo na tela
