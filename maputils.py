@@ -3,6 +3,7 @@ import pygame
 from pygame.locals import *
 from pygame import Rect
 from xml import sax
+from config import DEBUG
 
 class MapObject(object):
     def __init__(self, name, type, x, y, width, height):
@@ -87,8 +88,9 @@ class TMXHandler(sax.ContentHandler):
                 self.image.blit(tile, pos)
                 self.layers[self.currentLayer].append(Rect(pos[0], pos[1], self.tile_width, self.tile_height))
                 
-                if self.currentLayer in ('city', 'plants'):
-                    pygame.draw.rect(self.image, (0, 0, 255), Rect(pos[0], pos[1], self.tile_width, self.tile_height), 1)
+                if DEBUG:
+                    if self.currentLayer in ('city', 'plants'):
+                        pygame.draw.rect(self.image, (0, 0, 255), Rect(pos[0], pos[1], self.tile_width, self.tile_height), 1)
 
             self.column += 1
             if(self.column >= self.columns):

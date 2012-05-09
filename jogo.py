@@ -36,6 +36,9 @@ class Jogo(object):
         elif tela == Jogo.FASE_2:
             from fase_2 import Fase2
             self.telaAtual = Fase2(self)
+            
+    def sair(self):
+        self.rodando = False
 
     def main(self):
         while self.rodando:

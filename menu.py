@@ -11,7 +11,7 @@ class Menu(object):
                 if event.key == K_RETURN:
                     self.jogo.irParaTela(self.jogo.FASE_1)
                 if event.key == K_ESCAPE:
-                    self.jogo.rodando = False
+                    self.jogo.sair()
                     
     def renderiza(self):
         #Desenho do jogo na tela
