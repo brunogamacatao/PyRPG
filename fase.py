@@ -2,9 +2,11 @@ import pygame
 from pygame.locals import *
 from maputils import Mapa
 from config import DEBUG
+from tela import Tela
 
-class Fase(object):
+class Fase(Tela):
     def __init__(self, jogo, arquivo_mapa, obstaculos, posicao_jogador):
+        super(Fase, self).__init__(jogo)
         from personagens import Jogador
         
         self.obstaculos = obstaculos
@@ -12,7 +14,6 @@ class Fase(object):
         self.mapa_x     = 0
         self.mapa_y     = 0
         self.jogador    = Jogador(posicao_jogador)
-        self.jogo       = jogo
         
     def processa_eventos(self, eventos):
         from personagens import Jogador
@@ -93,7 +94,3 @@ class Fase(object):
         
             for objeto in self.mapa.tmxhandler.objects:
                 pygame.draw.rect(self.jogo.screen, (255, 0, 0), objeto, 1)
-
-    def processa(self, eventos):
-        self.processa_eventos(eventos)
-        self.renderiza()

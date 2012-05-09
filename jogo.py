@@ -9,9 +9,10 @@ OBSTACULOS   = ('city', 'plants')
 
 class Jogo(object):
     # Definição dos estados do jogo
-    MENU   = 0
-    FASE_1 = 1
-    FASE_2 = 2
+    ABERTURA = 0
+    MENU     = 1
+    FASE_1   = 2
+    FASE_2   = 3
     
     def __init__(self, tamanho_tela = TAMANHO_TELA, fps = FPS):
         pygame.init()
@@ -22,12 +23,15 @@ class Jogo(object):
         self.clock        = pygame.time.Clock()
         self.rodando      = True
         
-        self.irParaTela(Jogo.MENU)
+        self.irParaTela(Jogo.ABERTURA)
         
     def irParaTela(self, tela):
         self.estadoAtual = tela
         
-        if tela == Jogo.MENU:
+        if tela == Jogo.ABERTURA:
+            from abertura import Abertura
+            self.telaAtual = Abertura(self)
+        elif tela == Jogo.MENU:
             from menu import Menu
             self.telaAtual = Menu(self)
         elif tela == Jogo.FASE_1:

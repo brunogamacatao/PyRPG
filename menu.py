@@ -1,10 +1,8 @@
 import pygame
 from pygame.locals import *
+from tela import Tela
 
-class Menu(object):
-    def __init__(self, jogo):
-        self.jogo = jogo
-
+class Menu(Tela):
     def processa_eventos(self, eventos):
         for event in eventos:
             if event.type == KEYDOWN:
@@ -16,7 +14,3 @@ class Menu(object):
     def renderiza(self):
         #Desenho do jogo na tela
         self.jogo.screen.fill((255, 0, 0))
-
-    def processa(self, eventos):
-        self.processa_eventos(eventos)
-        self.renderiza()
