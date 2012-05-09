@@ -6029,5 +6029,10 @@
     <property name="para" value="FASE_2"/>
    </properties>
   </object>
+  <object name="saida" type="Porta" x="11" y="272">
+   <properties>
+    <property name="para" value="MENU"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
