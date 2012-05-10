@@ -11,7 +11,7 @@ VELOCIDADE = 4
 class Abertura(Tela):
     def __init__(self, jogo):
         self.jogo   = jogo
-        self.imagem = pygame.image.load('garfield.png')
+        self.imagem = pygame.image.load('imagens/garfield.png')
         self.rect   = self.imagem.get_rect()
         self.frame_atual  = 0
         self.ultimo_tempo = pygame.time.get_ticks()

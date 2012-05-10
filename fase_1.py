@@ -2,7 +2,7 @@ import pygame
 from pygame.locals import *
 from fase import Fase
 
-ARQUIVO_MAPA = 'mapa.tmx'
+ARQUIVO_MAPA = 'mapas/mapa.tmx'
 OBSTACULOS   = ('city', 'plants')
 
 class Fase1(Fase):

@@ -5,6 +5,8 @@ from pygame import Rect
 from xml import sax
 from config import DEBUG
 
+MAP_DIR = 'mapas'
+
 class MapObject(object):
     def __init__(self, name, type, x, y, width, height):
         self.name = name
@@ -16,7 +18,7 @@ class MapObject(object):
 
 class Tileset(object):
     def __init__(self, file, tile_width, tile_height):
-        image = pygame.image.load(file).convert_alpha()
+        image = pygame.image.load(MAP_DIR + '/' + file).convert_alpha()
         if not image:
             print "Error creating new Tileset: file %s not found" % file
         self.tile_width  = tile_width

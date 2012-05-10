@@ -5,7 +5,7 @@ from myutils import Spritesheet, Animacao
 
 class Jogador(pygame.sprite.Sprite):
     #Carregamento do spritesheet
-    spritesheet = Spritesheet('personagem.png')
+    spritesheet = Spritesheet('imagens/personagem.png')
 
     #Definicao das direcoes
     CIMA     = 0
