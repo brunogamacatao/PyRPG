@@ -76,8 +76,13 @@ class Fase(Tela):
             self.mapa_y += 1
 
         objeto = self.mapa.get_collision_objects(self.jogador.get_collision_rect())
-        if objeto and objeto.properties.has_key('para'):
-            self.jogo.irParaTela(getattr(self.jogo, objeto.properties['para']))
+        if objeto:
+            if objeto.properties.has_key('para'):
+                self.jogo.irParaTela(getattr(self.jogo, objeto.properties['para']))
+            elif objeto.properties.has_key('voltar'):
+                dx = int(objeto.properties['dx'])
+                dy = int(objeto.properties['dy'])
+                self.jogo.voltar(dx, dy)
 
     def renderiza(self):
         #Desenho do jogo na tela

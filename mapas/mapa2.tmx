@@ -30016,9 +30016,11 @@
   </data>
  </layer>
  <objectgroup name="portas" width="32" height="32">
-  <object name="retorno" type="Porta" x="191" y="257">
+  <object name="retorno" type="Porta" x="191" y="257" width="32" height="32">
    <properties>
-    <property name="para" value="FASE_1"/>
+    <property name="dx" value="-32"/>
+    <property name="dy" value="0"/>
+    <property name="voltar" value="True"/>
    </properties>
   </object>
  </objectgroup>

@@ -25,7 +25,11 @@ class Jogo(object):
         
         self.irParaTela(Jogo.ABERTURA)
         
-    def irParaTela(self, tela):
+    def irParaTela(self, tela, temVolta = False):
+        if hasattr(self, 'estadoAtual'):
+            self.estadoAnterior = self.estadoAtual
+            self.telaAnterior   = self.telaAtual
+        
         self.estadoAtual = tela
         
         if tela == Jogo.ABERTURA:
@@ -40,6 +44,16 @@ class Jogo(object):
         elif tela == Jogo.FASE_2:
             from fase_2 import Fase2
             self.telaAtual = Fase2(self)
+            
+    def voltar(self, dx = 0, dy = 0):
+        self.estadoAtual = self.estadoAnterior
+        self.telaAtual   =  self.telaAnterior
+        
+        delattr(self, 'estadoAnterior')
+        delattr(self, 'telaAnterior')
+        
+        self.telaAtual.jogador.posicao[0] += dx
+        self.telaAtual.jogador.posicao[1] += dy
             
     def sair(self):
         self.rodando = False
