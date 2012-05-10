@@ -6,43 +6,7 @@ from pygame.locals import *
 RES = (640,480)
 COLOUR_MAP = [[]] * 256
 
-def main():
-    " Initialises display, fills a dummy screen to white, calls the blind effect..."
-
-
-    # Init pygame, grab an 8bit display...
-    pygame.init()
-
-    #setup a surface for the display, and a palette which we'll use...
-    screen_surface = pygame.display.set_mode(RES, 0, 8)
-
-        # setup the screen palette... (Just greyscale 8bit for this hacK)   
-    for i in range(0,256):
-            COLOUR_MAP[i] = (i),(i),(i)
-
-
-    # Slap the palette onto the screen...
-    screen_surface.set_palette(COLOUR_MAP)
-
-    # Fill the screen with white, as we know we'll fade up to white for the effect, so this will always be our base colour...
-    screen_surface.fill((255,255,255))    
-
-    # Create a surfarray of the screen for hacking on...
-    screen_map = pygame.surfarray.array2d(screen_surface)
-
-    # Quick ping of the display...
-    pygame.display.update()
-
-    # Call the blinds function...          
-    blinds(screen_map, RES, screen_surface, 6)
-    
-    # Print out a little messgae, and exit...
-    print "Blinds transition, Korruptor 2002"
-
-
-
-#-------------------------------------------------------------------------------------
-def blinds(map,size, screen, fade):
+def blinds(map, size, screen, fade):
     "Using a 256 colour palette, this function will draw a blinds effect accross the screen, leaving a black background..."
 
 
