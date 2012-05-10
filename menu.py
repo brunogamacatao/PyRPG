@@ -3,6 +3,10 @@ from pygame.locals import *
 from tela import Tela
 
 class Menu(Tela):
+    def __init__(self, jogo):
+        super(Menu, self).__init__(jogo)
+        self.bg_image = pygame.image.load('imagens/menubg.png')
+    
     def processa_eventos(self, eventos):
         for event in eventos:
             if event.type == KEYDOWN:
@@ -12,5 +16,4 @@ class Menu(Tela):
                     self.jogo.sair()
                     
     def renderiza(self):
-        #Desenho do jogo na tela
-        self.jogo.screen.fill((255, 0, 0))
+        self.jogo.screen.blit(self.bg_image, self.bg_image.get_rect())
