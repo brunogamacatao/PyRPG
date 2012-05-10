@@ -25,7 +25,7 @@ class Jogo(object):
         
         self.irParaTela(Jogo.ABERTURA)
         
-    def irParaTela(self, tela, temVolta = False):
+    def irParaTela(self, tela):
         if hasattr(self, 'estadoAtual'):
             self.estadoAnterior = self.estadoAtual
             self.telaAnterior   = self.telaAtual
@@ -44,6 +44,12 @@ class Jogo(object):
         elif tela == Jogo.FASE_2:
             from fase_2 import Fase2
             self.telaAtual = Fase2(self)
+            
+        self.exibe_transicao()
+        
+    def exibe_transicao(self):
+        from transicoes import blinds
+        blinds(pygame.surfarray.array2d(self.screen), self.tamanho_tela, self.screen, 6)
             
     def voltar(self, dx = 0, dy = 0):
         self.estadoAtual = self.estadoAnterior

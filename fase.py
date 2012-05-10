@@ -98,4 +98,4 @@ class Fase(Tela):
                 pygame.draw.rect(self.jogo.screen, (255, 0, 0), rects[1].move(self.mapa_x, self.mapa_y), 1)
         
             for objeto in self.mapa.tmxhandler.objects:
-                pygame.draw.rect(self.jogo.screen, (255, 0, 0), objeto, 1)
+                pygame.draw.rect(self.jogo.screen, (255, 0, 0), objeto.rect.move(self.mapa_x, self.mapa_y), 1)
