@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="TIBIA" tilewidth="32" tileheight="32">
+  <image source="TIBIA.PNG" trans="ff00ff" width="256" height="1056"/>
+ </tileset>
+ <tileset firstgid="265" name="Shallow_Water_Tile" tilewidth="32" tileheight="32">
+  <image source="Jogo/Shallow_Water_Tile.gif" trans="ff00ff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="266" name="caverna notebookinvert2" tilewidth="32" tileheight="32">
+  <image source="Jogo/caverna notebookinvert2.jpg" trans="ff00ff" width="200" height="400"/>
+ </tileset>
+ <tileset firstgid="338" name="montanha2supoer" tilewidth="32" tileheight="32">
+  <image source="Jogo/montanha2supoer.png" trans="ff00ff" width="104" height="181"/>
+ </tileset>
+ <tileset firstgid="353" name="montanhavirada" tilewidth="32" tileheight="32">
+  <image source="Jogo/montanhavirada.png" trans="ff00ff" width="103" height="176"/>
+ </tileset>
+ <layer name="mar" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztwzENAAAMA6DurH/DFTJI6CVVVVX13QGQlSMp
+  </data>
+ </layer>
+ <layer name="CHão" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzF1r8OAUEQBvC7R6ChoaGhoaGhoaGhIYQQToh/4VFRocKj+CZ2Ermcde7s3JdMtcn+cjvZvXFsy5qhLpZs5jAXyqVaC7lLmKs3V8rewNx6uFymsoO5d7nvtqnEYMY1rik/ATPp4Zo+7xTM9AfXpJ2BmTXkHlBHV53UWg5mXuOGsc8ee13VWgFmMQK3BLP8g/uLrXMrMKtf3KC2zq3BrPtwg9g31N1VD7XWgNkM6Ia5Wy2Y7QDnHPY+dyIwKT2fb8a/360B3KGP/8K/38oRzLHm/2vKpf52bVmTQv3t2699Jc6Xw/2V+k4O91fSpExgTiNwHTW3S5oUntslTQrP7ZImhed2aZfndimP8wT9n8C+
+  </data>
+ </layer>
+ <layer name="arvores" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlkEKwCAMBPdhemv//6V66ELJvRMlGQh4mySCriSNVVM816r7PdM92PftgcA+++m57Y99/E30UHvfbd80VedumuZMMvKIndRbReePbB91p9GXle8oKv3vlWbN4gHDzRXp
+  </data>
+ </layer>
+ <layer name="arvores 2" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIwEYAbExHj6tgBUQW+Ph0xLQy4/oAObHgbZ/oMFI9/8oGAWjgDww3MqO4eafUTAKRsHwAwC14gX3
+  </data>
+ </layer>
+ <layer name="arvores 3" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUUAvMAeK5A2DvEiBeimQ/NdwBM+MkEebB7IfRlACYGScpMI9c/59EYp8iQz857rUBYlsy7KIUuACxKxKfHP+ONDDQ+ZsegN5+hNlHTz8yDIB9o2AUjIJRMJgBAOflG4Q=
+  </data>
+ </layer>
+</map>

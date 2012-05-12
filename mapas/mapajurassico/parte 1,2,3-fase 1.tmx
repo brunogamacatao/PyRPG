@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="montanhavirada" tilewidth="32" tileheight="32">
+  <image source="montanhavirada.png" trans="ff00ff" width="103" height="176"/>
+ </tileset>
+ <tileset firstgid="16" name="montanha2supoer" tilewidth="32" tileheight="32">
+  <image source="montanha2supoer.png" trans="ff00ff" width="104" height="181"/>
+ </tileset>
+ <tileset firstgid="31" name="TIBIA" tilewidth="32" tileheight="32">
+  <image source="TIBIA.PNG" trans="ff00ff" width="256" height="1056"/>
+ </tileset>
+ <tileset firstgid="295" name="gramato" tilewidth="32" tileheight="32">
+  <image source="gramato.png" trans="ff00ff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="296" name="caverna notebookinvert" tilewidth="32" tileheight="32">
+  <image source="caverna notebookinvert.jpg" trans="ff00ff" width="200" height="400"/>
+ </tileset>
+ <tileset firstgid="368" name="Shallow_Water_Tile" tilewidth="32" tileheight="32">
+  <image source="Shallow_Water_Tile.gif" trans="ff00ff" width="32" height="32"/>
+ </tileset>
+ <layer name="Chão" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzV1LsNwCAMBFCYBmVShmDKlOlSoVjIX8BYKa5xweNI5JJTKgdypTMO9GBOdBrNHW5NX7DzqezwrOaMO3reLuX9xdS4nOfZNSu7to3uI/RswLS4kq9xMbPPqB0l2TNuY+6j7cy52PmcSc1XXSySO/N9Labnf6VxNW+scTl7pa9mV1WjtdPl3nJ2b3ns52iXs+8gV7K9TMn2dkd7xbO60I9wqUS51rt4utw9+uwFcVPu1Q==
+  </data>
+ </layer>
+ <layer name="montanhas" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJy9lsEuBEEQhnuFEEJCCCFcZYIDDuwBBxwI4cLBulgHLmTfx5tw2eGJ3Lj5K+lOWqnq6dpdU8mXnWRm5+u/q7t3Ow3nOjWxCtbARo3OI+fcMdjE9XaN3jM4z8EOrpt9vIdXGV2HbC8RhWcP3z0YkC84u/4zZAvO0t8jqL/rffhSeUMVAtTfLaPzBrQ8OVX4jEV0Tf3drfB9sfe0wb0nJ3ecM/ipv/sJX0OZ25A5Ny/nkPaUsZfkDJlzSlrPJ3j/qXH9WJzOyXkv4Lg0Zs2d39gbZ+2CKziuDd5U1tL93sexl9OC49Y4z6/gTXFKJXnv4GgnvLEjzPE7+FD8ud4HOB4T3uCg4nMc37N6n+B4Fry5WXJK8k6DGffXq81lL+Ph65mYBXOC99t/h8+ltbda3nmwwLx0PgavllfqrWU9L4KljLySj58hfC9p+5lK6y/xGT0nza90hkgOya/1N84cV9Xe4Xm1e1J/tcyhtPMqNZaSPaf1N3V2WdaUNoZlsFLhDe7UmqrKycdHrxzK8PLsVb/BqT5TDYMRg7fX/5m8RsHYALzWsYyDiX/ypsYxCabAD3en92c=
+  </data>
+ </layer>
+ <layer name="Itens" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlksOwjAMRHs42IEEOz47uCXs4GK4EiMNI8dpU6crnmQpKTTjsaOkw/BnDheLqzMe2VhsneetHCyO3/HN4u6MR3YWe+f5HDjnk8XZ4mHxnPhOK5wz/L4s3sOvf9bK8gng15sv0WKwDjwhD9S4VMtaD0qoDjwhD9SY/XEO+H2uvuowuhbm3n+hX0N9ensGa+k8yq2G+oz2TFSLqT4Z9axEXlr0QNTbpWtPgXu7BtDT86E3nh562noezEXP4p695b6uWWvW4rpGd3w2XNfojs9Az42St2zPem6wN657D88j3rlRuwMyalDaXzov7YGMHNSnzj2NXn1gPdXQ+mTvwdqdFX2L9KT1OytbH3wA9TZxFw==
+  </data>
+ </layer>
+</map>

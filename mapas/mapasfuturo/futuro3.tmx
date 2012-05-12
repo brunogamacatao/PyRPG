@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="25" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="asfalto" tilewidth="32" tileheight="32">
+  <image source="asfalto.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="5" name="asfalto2" tilewidth="32" tileheight="32">
+  <image source="asfalto2.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="9" name="free_tileset_version_9" tilewidth="32" tileheight="32">
+  <image source="free_tileset_version_9.png" width="480" height="1088"/>
+ </tileset>
+ <tileset firstgid="519" name="casa2" tilewidth="32" tileheight="32">
+  <image source="casa2.png" width="256" height="192"/>
+ </tileset>
+ <tileset firstgid="567" name="alsfalto4" tilewidth="32" tileheight="32">
+  <image source="alsfalto4.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="571" name="antiques" tilewidth="32" tileheight="32">
+  <image source="antiques.png" width="192" height="160"/>
+ </tileset>
+ <tileset firstgid="601" name="casa1" tilewidth="32" tileheight="32">
+  <image source="casa1.png" width="256" height="192"/>
+ </tileset>
+ <tileset firstgid="649" name="carro" tilewidth="32" tileheight="32">
+  <image source="carro.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="653" name="calçada" tilewidth="32" tileheight="32">
+  <image source="calçada.png" width="64" height="64"/>
+ </tileset>
+ <layer name="chao" width="25" height="25" opacity="0.97">
+  <data encoding="base64" compression="zlib">
+   eJztVFsKwzAMc7IcYZ876e6QpDfuWtqAMJbjQdevFYRK/JDtEK8isgZQs0jfsADvZw1QCUfy79D5O/wvhm3my8DqRK7OeSRGz8iqF2fajD5Yj7Pcuk6tg/c2m4XWwtiu8g8b1jK7M48x3rI95fdIG/LJUbzTAc8nAz82lJOjGBqeTwEeWtnQZ4x9RPyHVjH0GWMfEf877tx7s2wHejGWv7VDda5X4vjm7Xpv0dOI9FEJ0OZpsHgrj+4P65hpNAKcFdszkVmhP7uHu/aV3jNXw9ozV+P/xb8PCGO7ZA==
+  </data>
+ </layer>
+ <layer name="casas" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt1ElPFEEUwPGuvsgqArK4ILssIoqoF1lUVmVflUVAFMUFFZVNQHaUYT6AeuRCxpsX4TsYv4iYeBbHxH9napJmbKiemQsHKvmlkp6X9+rVdD+3pml/4VbsLqFpv7T/fRHWJk2/hSPCxu7aJZdXiK5poQhDOCIQicP4Juz5jivEF6EYJSjFVUThCKIRg1gcRRzidev+d3ON+OsoQzkqUIkEJOIYjuMETiIJp/ysUUV8NW7gJmpQi2SkIBVpSEcGMnHazxp1xNejAY1oQjOykI0c5OIM8nAW+VgT9rUQ34o2tOMWbuMczqMAF1CIi7iEy7rnHTPzntn3eTACXUZfqrVCDw49+Bree7Squ0p+p74zzl8div/T3MeasHenvjnuKmqY+7BTJ5B+vcvotxNd6MYd9KAXfRbvndkUpnFI33teGf324x7uYwAP8BCDssYHzvTRwifhqaGaV4/wGE/wFEN4hud4Ie97Xd7jD2zhpzz/uqyhmlfDeIlXeI0RjGIM47IPI5eD/Te28QdO+fyzUM+rCbwxcmEK03iLGczKd8LItcoewh6KMLGzD9W8msM8FrCIJSzjHd7LGl/JtWFhU3j6Uc2rQL+//SLYeWVn+X7nB0u9/gEXN+18
+  </data>
+ </layer>
+ <objectgroup name="objeto" width="25" height="25">
+  <object name="nasce" x="8" y="628"/>
+  <object name="saida" x="448" y="202">
+   <properties>
+    <property name="para" value="loja"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

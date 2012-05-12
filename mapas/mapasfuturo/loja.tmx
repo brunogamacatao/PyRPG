@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="free_tileset_version_9" tilewidth="32" tileheight="32">
+  <image source="free_tileset_version_9.png" width="480" height="1088"/>
+ </tileset>
+ <layer name="chao" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjZWBgYB3FgwYDAIwnAfU=
+  </data>
+ </layer>
+ <layer name="objetos" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJyTYGBgkCKAJYFYE4hNgdgMD60JxS5A7IqHhqkjBGitzopIdZ541KkzEA4/DSBWAGIlIjAA2BQKBA==
+  </data>
+ </layer>
+ <objectgroup name="objeto" width="10" height="10">
+  <object x="266" y="189" width="1"/>
+  <object name="nasce" x="268" y="190"/>
+  <object x="263" y="91" width="6"/>
+  <object name="item" x="30" y="75" width="260" height="23"/>
+ </objectgroup>
+</map>

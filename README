@@ -1,0 +1,14 @@
+Einstein's Notebook Game
+Project for PyWeek developed by first semester students of Facisa Game Development gratuation course.
+Our homepage: http://cesed.br/jogosdigitais/blog/
+
+Instructions:
+
+The game was developed using PyGame library.
+In order to run the game you must have Python 2.x installed and PyGame.
+
+Run the game:
+
+python jogo.py
+
+Enjoy it !

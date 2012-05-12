@@ -29,23 +29,15 @@ class Fase(Tela):
             if event.type == KEYDOWN:
                 if event.key == K_ESCAPE:
                     self.jogo.irParaTela(self.jogo.MENU)
-
         
         #Obtem a lista de teclas pressionadas
-        teclas  = pygame.key.get_pressed()
         andando = False
         old_pos = (self.jogador.posicao[0], self.jogador.posicao[1])
         
+        teclas = pygame.key.get_pressed()
         if self.old_teclas:
-            if not self.old_teclas[K_RETURN] and teclas[K_RETURN]:
-                if self.exibindo_texto:
-                    if self.escrevendo_texto:
-                        self.linha_atual = len(self.linhas) - 1
-                        self.letra_atual = len(' '.join(self.linhas[self.linha_atual])) - 1
-                        self.escrevendo_texto = False
-                    else:
-                        self.exibindo_texto = False
-        
+            self.process_key_typed(self.diferenca(teclas, self.old_teclas))
+            self.process_key_released(self.diferenca(self.old_teclas, teclas))
         self.old_teclas = teclas
         
         if self.exibindo_texto:
@@ -73,6 +65,8 @@ class Fase(Tela):
                 self.jogador.direcao  = Jogador.BAIXO
                 self.jogador.animacao = Jogador.ANDANDO
                 andando = True
+            if teclas[K_p]:
+                self.exibir_texto("Jogo Pausado - Pressione ENTER para continuar ...")
 
             if not andando:
                 self.jogador.animacao = Jogador.PARADO
@@ -97,6 +91,9 @@ class Fase(Tela):
             if self.jogador.posicao[1] + self.mapa_y < self.jogo.tamanho_tela[1] * 0.25 and self.mapa_y < 0:
                 self.mapa_y += 1
 
+            if self.mapa_x < -160:
+                self.mapa_x = -160
+
             objeto = self.mapa.get_collision_objects(self.jogador.get_collision_rect())
             if objeto:
                 if objeto.properties.has_key('para'):
@@ -112,7 +109,7 @@ class Fase(Tela):
         self.jogo.screen.blit(self.jogador.image, self.jogador_img_rect)
         
         if self.exibindo_texto:
-            self.jogo.screen.fill((49, 47, 122, 0), Rect(OFFSET_X / 2, self.texto_y - OFFSET_X / 2, self.jogo.tamanho_tela[0] - OFFSET_X, self.altura_texto + OFFSET_X), BLEND_ADD)
+            self.jogo.screen.fill((255, 255, 255, 0), Rect(OFFSET_X / 2, self.texto_y - OFFSET_X / 2, self.jogo.tamanho_tela[0] - OFFSET_X, self.altura_texto + OFFSET_X), BLEND_ADD)
             y = self.texto_y
             texto_to_draw = ' '.join(self.linhas[self.linha_atual])[0 : self.letra_atual + 1]
             
@@ -178,3 +175,21 @@ class Fase(Tela):
         self.linha_atual  = 0
         self.tempo_ultima_letra = pygame.time.get_ticks()
         self.escrevendo_texto   = True
+
+    def process_key_typed(self, teclas):
+        if teclas[K_RETURN]:
+            if self.exibindo_texto:
+                if self.escrevendo_texto:
+                    self.linha_atual = len(self.linhas) - 1
+                    self.letra_atual = len(' '.join(self.linhas[self.linha_atual])) - 1
+                    self.escrevendo_texto = False
+                else:
+                    self.exibindo_texto = False
+        
+    def process_key_released(self, teclas):
+        pass
+
+    def diferenca(self, tupla_1, tupla_2):
+        resultado = []
+        for i in range(len(tupla_1)): resultado.append(tupla_1[i] and not tupla_2[i])
+        return tuple(resultado)

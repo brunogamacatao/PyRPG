@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="25" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="free_tileset_version_9" tilewidth="32" tileheight="32">
+  <image source="free_tileset_version_9.png" width="480" height="1088"/>
+ </tileset>
+ <tileset firstgid="511" name="calçada" tilewidth="32" tileheight="32">
+  <image source="calçada.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="515" name="palco" tilewidth="32" tileheight="32">
+  <image source="palco.png" width="416" height="224"/>
+ </tileset>
+ <tileset firstgid="606" name="casa2" tilewidth="32" tileheight="32">
+  <image source="casa2.png" width="256" height="192"/>
+ </tileset>
+ <tileset firstgid="654" name="casa1" tilewidth="32" tileheight="32">
+  <image source="casa1.png" width="256" height="192"/>
+ </tileset>
+ <tileset firstgid="702" name="tilesetfuturo" tilewidth="32" tileheight="32">
+  <image source="tilesetfuturo.png" width="558" height="675"/>
+ </tileset>
+ <tileset firstgid="1059" name="asfalto" tilewidth="32" tileheight="32">
+  <image source="asfalto.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="1063" name="carro" tilewidth="32" tileheight="32">
+  <image source="carro.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="1067" name="pessoa1" tilewidth="32" tileheight="32">
+  <image source="pessoa1.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="1071" name="pessoa2" tilewidth="32" tileheight="32">
+  <image source="pessoa2.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="1075" name="pessoa3" tilewidth="32" tileheight="32">
+  <image source="pessoa3.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="1079" name="pessoa4" tilewidth="32" tileheight="32">
+  <image source="pessoa4.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="1083" name="pessoa5" tilewidth="32" tileheight="32">
+  <image source="pessoa5.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="1087" name="pessoa6" tilewidth="32" tileheight="32">
+  <image source="pessoa6.png" width="64" height="64"/>
+ </tileset>
+ <layer name="chao" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJy9VUkOAyEMM2iO/cUs//9hi9QiWZYd9QIHixEJDkmIp3WgDfSBd8P4+K4T+Nkn2KZ2Pg/am/wguDPKy/v6zXZQDgzmT1A/9u9FDMeT4O6QeLheCr4vr//eA8bfxXJ9rDgru+Ou4Hqb/F5Yj/MArsW4B57FODfg3oDZe53NOTc6v13ep86Oe+P6zpIeddlz/qyDkLjM0wo+p5c666wbWgvNPWl6pZMKrR/n4XJxHJUusl65GO6s60Fa0z/A1T5pdaqJ00N+o9rLdCbpbcp5lyau1sNrgx4+G3LYlccHj5p/YQ==
+  </data>
+ </layer>
+ <layer name="casas" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt1EdPAlEUhmGcwd577wXBjr0Air0BAnYN2PZY9/Y91v/jH/Mlzk1MxuvEBSYST/JkZnO+m3NncpyqyeREF7rRAztUxWQyIxkpSEUa0pGBTGQhGznIVfQZzk+8GMcE3JhEHj35KEAhilCMEpSiDOWoQCWqFH2GV8t3aM8V+BFAENX01KAWdahHAxrRhGa0wIJWWBV9Rlg7x6HZxwEOcQQbPW1oRwc6Y3eBbvTAjl70oR8Dij4jrBFnnOIM57jAID1DGMYIRjEGB5xwxe4GE3BjUtFniDk8mhvc4g73mKJnGjOYxRzmsYBFLGEZHnjhU/QZYo63pA9PvD/jBa+x70OPHwEEsYo1rGMDm9jCNnawq+gzRPZfL4uZf84c3zOs5NvifEaizPFfPy+xd10GvuuXEbkebW/5DMhK7LuviNyQtrf2DMgqpMqJ3AiOcWJAVhFVTuRe4grXBmR1qcqJ3Cge8GhAVlFVLlF2yW/O8Q5z4mQG
+  </data>
+ </layer>
+ <layer name="pessoas" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztlFluwzAMRB1At+nqxF3Svb3/oToB/NTJVIqR/vTHBB4QM5TEISkNw2qrrXaujZth2IqdmGb+uqb6i3ziQTyKZ/Ei3sWHuBG3ZTnuQlyW9hl38t+LvXgSr+JNfIovMYptWY67EtflR4ufwfmH7x6HuJ4+1qPP68Vazufb93V6+liPPmq62/zek++azxyLn7yX9FLT3NtjyIfYmsucd09v1tTnCR/5j7Gm1TfXy3r81HQyTfjIv9WLVt9yvvAzE/475yNjezrz3uBnJvx3zkfG9nTmvWn1pndvl2YY0O3zdrT/ift9ajb93Krb5s3/n2zGyIP6Y+jMfmWfsh7+Nta85zyoP1brHP3KPmU9/L06963P93ts+P7DvgEZbk61
+  </data>
+ </layer>
+ <objectgroup name="objeto" width="25" height="25">
+  <object name="nasce" x="11" y="304"/>
+  <object name="saida" x="784" y="649">
+   <properties>
+    <property name="para" value="futuro3"/>
+   </properties>
+  </object>
+  <object name="saida" x="795" y="623">
+   <properties>
+    <property name="para" value="futuro3"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

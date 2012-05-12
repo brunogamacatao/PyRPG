@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="TIBIA" tilewidth="32" tileheight="32">
+  <image source="TIBIA.PNG" trans="ff00ff" width="256" height="1056"/>
+ </tileset>
+ <tileset firstgid="265" name="Door_(Bones)" tilewidth="32" tileheight="32">
+  <image source="Jogo/Door_(Bones).gif" trans="ff00ff" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="269" name="port" tilewidth="32" tileheight="32">
+  <image source="Jogo/port.gif" trans="ff00ff" width="42" height="72"/>
+ </tileset>
+ <layer name="Camada de Tiles 1" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt0z0KgDAMBeCuQi/lGTyAc2/u5KirChZLaUJe/wJq4C1i85mo1hhjgbg7yBmfsNCzJW5o/25b19vombWT66KMiWsOmEG657j/HKSnSwVxke+olov2fUvi+Tfz/CtIhjM7E8nuc+ywSv5t1Ja6kudC7LgoR7qPy54quojNzcyVpluya79vDZeaeyHu5Xq3dDlTw81Jym1t/q7u+/2am9vrAAK+liw=
+  </data>
+ </layer>
+ <layer name="Porta" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlEEOgjAQRX+XCPfp2jN4Ci+urIw7XQpx8xksdIZpqoaX/JBMJ31NOwHQcVP2Mx1Fy+79b28TgEPY5szxXoZcKe3g7MK0NqZ39o73GikM10t4c6jlfSq98p1kjpjfryRm7CPjzZmSqss1Lx4Z8eKO9xunZkc7Vxqv3Jsdv+b9NNORvkve1FksNJjOica5xdsbXFbvqZKX+9kL1PNyTw2v7CvlXetLnaGEV7OP1Wtxe/4nd76TF/qcScs=
+  </data>
+ </layer>
+</map>
